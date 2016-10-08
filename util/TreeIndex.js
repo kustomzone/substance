@@ -133,6 +133,18 @@ class TreeIndexArrays extends TreeIndex {
     throw new Error('TreeIndex.set() is not supported for array type.');
   }
 
+  create(path) {
+    var ctx = this;
+    for (var i = 0; i < path.length; i++) {
+      var p = path[i];
+      if (!ctx[p]) {
+        ctx[p] = new TreeNode();
+      }
+      ctx = ctx[p];
+    }
+    if (!ctx.__values__) ctx.__values__ = [];
+  }
+
   add(path, value) {
     if (isString(path)) {
       path = [path];

@@ -41,6 +41,7 @@ import "./ui/Surface.test.js"
 import "./ui/TextPropertyComponent.test.js"
 
 // util
+import "./util/Flow.test.js"
 import "./util/TreeIndex.test.js"
 
 // collab
